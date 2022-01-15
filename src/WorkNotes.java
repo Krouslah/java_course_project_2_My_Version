@@ -42,7 +42,7 @@ public class WorkNotes extends Notes {
         while (newTitle.trim().length() == 0) {
             newTitle = Interface.scannerTitle();
         }
-        WorkNotes note = new WorkNotes(workMap.get(lookingTitle).getAuthor(), newTitle, workMap.get(lookingTitle).getBody());
+        WorkNotes note = new WorkNotes(workMap.get(lookingTitle).getAuthor().toString(), newTitle, workMap.get(lookingTitle).getBody());
         workMap.put(note.getTitle(), note);
         workMap.remove(lookingTitle);
         return workMap;
@@ -56,7 +56,7 @@ public class WorkNotes extends Notes {
         while (targetWord.trim().length() == 0) {
             targetWord = Interface.scannerWord();
         }
-        WorkNotes note = new WorkNotes(workMap.get(lookingTitle).getAuthor(), workMap.get(lookingTitle).getTitle(), workMap.get(lookingTitle).getBody().replace(fromWord, targetWord));
+        WorkNotes note = new WorkNotes(workMap.get(lookingTitle).getAuthor().toString(), workMap.get(lookingTitle).getTitle(), workMap.get(lookingTitle).getBody().replace(fromWord, targetWord));
         workMap.remove(lookingTitle);
         workMap.put(note.getTitle(), note);
         return workMap;
@@ -66,7 +66,7 @@ public class WorkNotes extends Notes {
         while (targetBody.trim().length() == 0) {
             targetBody = Interface.scannerBody();
         }
-        WorkNotes note = new WorkNotes(workMap.get(lookingTitle).getAuthor(), workMap.get(lookingTitle).getTitle(), targetBody);
+        WorkNotes note = new WorkNotes(workMap.get(lookingTitle).getAuthor().toString(), workMap.get(lookingTitle).getTitle(), targetBody);
         workMap.remove(lookingTitle);
         workMap.put(note.getTitle(), note);
         return workMap;

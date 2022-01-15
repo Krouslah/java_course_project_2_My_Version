@@ -1,11 +1,11 @@
-public class Notes {
-    private String author;
+public abstract class Notes <T> {
+    private T author;
 
-    public Notes(String author) {
+    public Notes(T author) {
         this.author = author;
     }
 
-    public String getAuthor() {
+    public T getAuthor() {
         return author;
     }
 }

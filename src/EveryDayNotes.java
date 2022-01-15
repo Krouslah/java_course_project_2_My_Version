@@ -42,7 +42,7 @@ public class EveryDayNotes extends Notes{
         while (newTitle.trim().length() == 0) {
             newTitle = Interface.scannerTitle();
         }
-        EveryDayNotes note = new EveryDayNotes(everyDayMap.get(lookingTitle).getAuthor(), newTitle, everyDayMap.get(lookingTitle).getBody());
+        EveryDayNotes note = new EveryDayNotes(everyDayMap.get(lookingTitle).getAuthor().toString(), newTitle, everyDayMap.get(lookingTitle).getBody());
         everyDayMap.put(note.getTitle(), note);
         everyDayMap.remove(lookingTitle);
         return everyDayMap;
@@ -58,7 +58,7 @@ public class EveryDayNotes extends Notes{
         while (targetWord.trim().length() == 0) {
             targetWord = Interface.scannerWord();
         }
-        EveryDayNotes note = new EveryDayNotes(everyDayMap.get(lookingTitle).getAuthor(), everyDayMap.get(lookingTitle).getTitle(), everyDayMap.get(lookingTitle).getBody().replace(fromWord, targetWord));
+        EveryDayNotes note = new EveryDayNotes(everyDayMap.get(lookingTitle).getAuthor().toString(), everyDayMap.get(lookingTitle).getTitle(), everyDayMap.get(lookingTitle).getBody().replace(fromWord, targetWord));
         everyDayMap.remove(lookingTitle);
         everyDayMap.put(note.getTitle(), note);
         return everyDayMap;
@@ -68,7 +68,7 @@ public class EveryDayNotes extends Notes{
         while (targetBody.trim().length() == 0) {
             targetBody = Interface.scannerBody();
         }
-        EveryDayNotes note = new EveryDayNotes(everyDayMap.get(lookingTitle).getAuthor(), everyDayMap.get(lookingTitle).getTitle(), targetBody);
+        EveryDayNotes note = new EveryDayNotes(everyDayMap.get(lookingTitle).getAuthor().toString(), everyDayMap.get(lookingTitle).getTitle(), targetBody);
         everyDayMap.remove(lookingTitle);
         everyDayMap.put(note.getTitle(), note);
         return everyDayMap;
